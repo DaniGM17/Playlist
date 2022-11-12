@@ -76,6 +76,25 @@ public class Lista<T> {
         
     }
     
+    public void delete(int posicion){
+        actual = head;
+        Nodo aux = null;
+        /*if(actual != null && numero != posicion){
+            head = actual.siguiente;
+            return;
+        }*/
+        int numero = 1;
+        while(actual != null && numero != posicion){
+            aux = actual;
+            actual = actual.siguiente;
+            numero++;
+        }
+        if(actual == null){
+            return;
+        }
+        aux.siguiente = actual.siguiente;
+    }
+    
     public void printList() {
         int posicion = 1;
         actual = head;

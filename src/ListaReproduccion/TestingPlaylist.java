@@ -22,6 +22,7 @@ public class TestingPlaylist {
         BufferedReader bufer = new BufferedReader(new InputStreamReader(System.in));
         String entrada;
         char continuar;
+        int posicion;
 
         System.out.println("Ingresa tu nombre");
         entrada = bufer.readLine();
@@ -113,6 +114,12 @@ public class TestingPlaylist {
 
                 case 3:
                     lista.delete();
+                break;
+                case 4:
+                    System.out.println("¿Qué posición quieres eliminar?");
+                    entrada = bufer.readLine();
+                    posicion = Integer.parseInt(entrada);
+                    lista.delete(posicion);
                 break;
                 case 7:
                     System.out.println("------------------------------");
