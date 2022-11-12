@@ -21,7 +21,7 @@ public class Lista<T> {
         this.tail = null;
         this.size = 0;
     }
-    
+
     public void add(Cancion cancion) {
         Nodo nuevoNodo = new Nodo(cancion);
         this.size++;
@@ -34,7 +34,7 @@ public class Lista<T> {
             actual = nuevoNodo;//Ahora actual es el nuevo nodo
         }
     }
-    
+
     public void add(Cancion cancion, int posicion) {
         Nodo nuevoNodo = new Nodo(cancion);
         int i = 1;
@@ -48,76 +48,66 @@ public class Lista<T> {
         actual = nuevoNodo;
         actual.setSiguiente(auxiliar);
     }
-    
+
     public void addInicio(Cancion cancion) {
+
         Nodo nuevoNodo = new Nodo(cancion);
         Nodo aux = head;
         head = nuevoNodo;
         head.setSiguiente(aux);
-        
+
     }
-    
-    public void delete(){
-        if(head == null){
-            System.out.println("La lista está vacía");
-            return;
-        }else{
-            if(head != tail){
-                actual = head;
-                while(actual.siguiente != tail){
-                    actual = actual.siguiente;
-                }
-                tail = actual;
-                tail.siguiente=null;
-            }else{
-                head = tail = null;
+
+    public void delete() {
+        if (head != tail) {
+            actual = head;
+            while (actual.siguiente != tail) {
+                actual = actual.siguiente;
             }
+            tail = actual;
+            tail.siguiente = null;
+        } else {
+            head = tail = null;
         }
-        
+
     }
-    
-    public void delete(int posicion){
+
+    public void delete(int posicion) {
         actual = head;
         Nodo aux = null;
         int numero = 1;
-        while(actual != null && numero != posicion){
+        while (actual != null && numero != posicion) {
             aux = actual;
             actual = actual.siguiente;
             numero++;
         }
-        if(actual == null){
+        if (actual == null) {
             return;
         }
         aux.siguiente = actual.siguiente;
     }
-    
-    public void deleteI(){
-        if(head == null){
-            System.out.println("La lista está vacía");
-            return;
-        }else{
-            if(head != tail){
-                head = head.siguiente;
-            }
-            else{
-                head = tail = null;
-            }
+
+    public void deleteI() {
+        if (head != tail) {
+            head = head.siguiente;
+        } else {
+            head = tail = null;
         }
     }
-    
-    public void buscar(int posicion){
+
+    public void buscar(int posicion) {
         actual = head;
-        int contador=0;
-        while (contador != posicion && contador !=posicion){
+        int contador = 0;
+        while (contador != posicion && contador != posicion) {
             actual = actual.getSiguiente();
             contador++;
-            if(contador == posicion){
-            System.out.println("Canción " + posicion);
-            System.out.println(actual.getObjeto().toString());
-        }
+            if (contador == posicion) {
+                System.out.println("Canción " + posicion);
+                System.out.println(actual.getObjeto().toString());
+            }
         }
     }
-    
+
     public void printList() {
         int posicion = 1;
         actual = head;
@@ -128,5 +118,12 @@ public class Lista<T> {
             posicion++;
         }
     }
-    
+
+    public boolean vacia() {
+        if(head == null){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

@@ -36,9 +36,7 @@ public class TestingPlaylist {
             System.out.println("3.-Borrar la última canción agregada");
             System.out.println("4.-Borrar una canción de una posición");
             System.out.println("5.-Buscar canción por posición");
-            System.out.println("6.-Buscar canción por nombre");
-            System.out.println("7.-Mostrar mi lista de reproducción");
-            System.out.println("8.-¿Cuantás canciones hay en mi lista?");
+            System.out.println("6.-Mostrar mi lista de reproducción");
             entrada = bufer.readLine();
             opcion = Integer.parseInt(entrada);
 
@@ -78,6 +76,11 @@ public class TestingPlaylist {
                     }
                     break;
                 case 2:
+                    boolean vacia=lista.vacia();
+                    if(vacia){
+                        System.out.println("La lista por el momento está vacía, debes inicializarla para poder hacer la siguiente acción");
+                        break;
+                    }
                     System.out.println("------------------------------");
                     System.out.println("Inserción de una nueva canción");
                     System.out.println("Nombre: ");
@@ -113,9 +116,19 @@ public class TestingPlaylist {
                     break;
 
                 case 3:
+                    vacia=lista.vacia();
+                    if(vacia){
+                        System.out.println("La lista por el momento está vacía, debes inicializarla para poder hacer la siguiente acción");
+                        break;
+                    }
                     lista.delete();
                 break;
                 case 4:
+                    vacia=lista.vacia();
+                    if(vacia){
+                        System.out.println("La lista por el momento está vacía, debes inicializarla para poder hacer la siguiente acción");
+                        break;
+                    }
                     System.out.println("¿Qué posición quieres eliminar?");
                     entrada = bufer.readLine();
                     posicion = Integer.parseInt(entrada);
@@ -126,12 +139,22 @@ public class TestingPlaylist {
                     }
                 break;
                 case 5:
+                    vacia=lista.vacia();
+                    if(vacia){
+                        System.out.println("La lista por el momento está vacía, debes inicializarla para poder hacer la siguiente acción");
+                        break;
+                    }
                     System.out.println("¿Qué posición quieres buscar?");
                     entrada = bufer.readLine();
                     posicion = Integer.parseInt(entrada);
                     lista.buscar(posicion);
                 break;
-                case 7:
+                case 6:
+                    vacia=lista.vacia();
+                    if(vacia){
+                        System.out.println("La lista por el momento está vacía, debes inicializarla para poder hacer la siguiente acción");
+                        break;
+                    }
                     System.out.println("------------------------------");
                     System.out.println("Contenido de la playlist: ");
                     lista.printList();
