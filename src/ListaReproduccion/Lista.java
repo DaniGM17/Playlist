@@ -57,6 +57,25 @@ public class Lista<T> {
         
     }
     
+    public void delete(){
+        if(head == null){
+            System.out.println("La lista está vacía");
+            return;
+        }else{
+            if(head != tail){
+                actual = head;
+                while(actual.siguiente != tail){
+                    actual = actual.siguiente;
+                }
+                tail = actual;
+                tail.siguiente=null;
+            }else{
+                head = tail = null;
+            }
+        }
+        
+    }
+    
     public void printList() {
         int posicion = 1;
         actual = head;

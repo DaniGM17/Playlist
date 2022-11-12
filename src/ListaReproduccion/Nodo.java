@@ -12,7 +12,7 @@ package ListaReproduccion;
 public class Nodo{
 
     private Cancion objeto;//dato almacendo
-    private Nodo siguiente;// apuntador al siguiente nodo, referencia a la misma clase
+    public Nodo siguiente;// apuntador al siguiente nodo, referencia a la misma clase
 
     public Nodo(Cancion o) {
         this.objeto = o;

@@ -111,6 +111,9 @@ public class TestingPlaylist {
                     }
                     break;
 
+                case 3:
+                    lista.delete();
+                break;
                 case 7:
                     System.out.println("------------------------------");
                     System.out.println("Contenido de la playlist: ");
