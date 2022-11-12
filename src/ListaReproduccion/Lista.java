@@ -22,7 +22,7 @@ public class Lista<T> {
     }
     
     public void add(Cancion cancion){
-        Nodo nuevoNodo = new Nodo(cancion, null);
+        Nodo nuevoNodo = new Nodo(cancion);
         this.size++;
         this.tail = nuevoNodo; //se mueve el apuntador al último nodo
         if(head==null){//La lista está vacía, creamos el nodo
@@ -34,7 +34,7 @@ public class Lista<T> {
         }
     }
     
-     /*public void add(T objeto, int posicion){
+     public void add(Cancion cancion, int posicion){
         Nodo nuevoNodo = new Nodo(cancion);
         int i = 1;
         actual = head;
@@ -47,7 +47,6 @@ public class Lista<T> {
         actual = nuevoNodo;
         actual.setSiguiente(auxiliar);
     }
-    */
     
     public void printList(){
         int posicion = 1;
