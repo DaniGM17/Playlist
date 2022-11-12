@@ -105,6 +105,19 @@ public class Lista<T> {
         }
     }
     
+    public void buscar(int posicion){
+        actual = head;
+        int contador=0;
+        while (contador != posicion && contador !=posicion){
+            actual = actual.getSiguiente();
+            contador++;
+            if(contador == posicion){
+            System.out.println("Canción " + posicion);
+            System.out.println(actual.getObjeto().toString());
+        }
+        }
+    }
+    
     public void printList() {
         int posicion = 1;
         actual = head;

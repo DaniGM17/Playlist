@@ -125,6 +125,12 @@ public class TestingPlaylist {
                     lista.delete(posicion);
                     }
                 break;
+                case 5:
+                    System.out.println("¿Qué posición quieres buscar?");
+                    entrada = bufer.readLine();
+                    posicion = Integer.parseInt(entrada);
+                    lista.buscar(posicion);
+                break;
                 case 7:
                     System.out.println("------------------------------");
                     System.out.println("Contenido de la playlist: ");
