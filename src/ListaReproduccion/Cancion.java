@@ -17,9 +17,14 @@ public class Cancion {
     private boolean favoritos;
     private int year;
     
-    public Cancion(String n, String i){
+    public Cancion(String n, String i, String a, double d, String g, boolean f, int y){
         this.nombre=n;
         this.interprete=i;
+        this.album=a;
+        this.duracion=d;
+        this.genero=g;
+        this.favoritos=f;
+        this.year=y;
     }
 
     public String getNombre() {
