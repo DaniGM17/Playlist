@@ -9,22 +9,22 @@ package ListaReproduccion;
  * @author dania
  * @param <T>
  */
-public class Nodo<T> {
+public class Nodo{
 
-    private T objeto;//dato almacendo
+    private Cancion objeto;//dato almacendo
     private Nodo siguiente;// apuntador al siguiente nodo, referencia a la misma clase
 
-    public Nodo(T o) {
+    public Nodo(Cancion o, Nodo siguiente) {
         this.objeto = o;
         this.siguiente = null;
     }
 
-    public T getObjeto() {
+    public Cancion getObjeto() {
         return objeto;
     }
 
-    public void setObjeto(T o) {
-        this.objeto = o;
+    public void setObjeto(Cancion objeto) {
+        this.objeto = objeto;
     }
 
     public Nodo getSiguiente() {
@@ -34,6 +34,8 @@ public class Nodo<T> {
     public void setSiguiente(Nodo otroNodo) {
         this.siguiente = otroNodo;
     }
+
+    
 
    
 

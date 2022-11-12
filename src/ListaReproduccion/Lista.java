@@ -13,7 +13,7 @@ public class Lista<T> {
     private Nodo tail;//Apuntador a la cola de la lista (último nodo)
     private Nodo actual;
     private  int size;//Tamaño de la lista(número de nodos en la lista)
-    
+
     public Lista(){
         this. head=null;
         this.actual=null;
@@ -21,8 +21,8 @@ public class Lista<T> {
         this.size=0;
     }
     
-    public void add(T objeto){
-        Nodo nuevoNodo = new Nodo(objeto);
+    public void add(Cancion cancion){
+        Nodo nuevoNodo = new Nodo(cancion, null);
         this.size++;
         this.tail = nuevoNodo; //se mueve el apuntador al último nodo
         if(head==null){//La lista está vacía, creamos el nodo
@@ -34,8 +34,8 @@ public class Lista<T> {
         }
     }
     
-     public void add(T objeto, int posicion){
-        Nodo nuevoNodo = new Nodo(objeto);
+     /*public void add(T objeto, int posicion){
+        Nodo nuevoNodo = new Nodo(cancion);
         int i = 1;
         actual = head;
         while (i<posicion - 1){
@@ -47,13 +47,14 @@ public class Lista<T> {
         actual = nuevoNodo;
         actual.setSiguiente(auxiliar);
     }
+    */
     
     public void printList(){
         int posicion = 1;
         actual = head;
         while (actual != null){
-            T elemento =(T) actual.getObjeto();
-            System.out.println("Cancion= " + elemento + " almacenada en nodo: " + posicion);
+            System.out.println("Canción " + posicion);
+            System.out.println(actual.getObjeto().toString());
             actual = actual.getSiguiente();//obtiene dirección del siguiente nodo para que se pueda mover
             posicion++;
         }

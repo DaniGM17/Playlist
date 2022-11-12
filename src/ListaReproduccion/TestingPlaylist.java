@@ -18,7 +18,6 @@ public class TestingPlaylist {
         String entrada;      
         char respuesta;
         Lista lista = new Lista();
-        Nodo<Cancion> objeto;
 
         for (;;) {//ciclo infinito
             System.out.println("Nombre: ");
@@ -43,7 +42,6 @@ public class TestingPlaylist {
             entrada = bufer.readLine();
             int year = Integer.parseInt(entrada);
             Cancion unaCancion = new Cancion(nombre,interpetre,album,duracion,genero,favoritos,year);
-            objeto = new Nodo<>(unaCancion);
             lista.add(unaCancion);
             System.out.println("¿Se ha agregado la canción a la lista?");
             System.out.println("¿Quieres agregar más canciones? (y/n)");
@@ -56,8 +54,6 @@ public class TestingPlaylist {
 
         System.out.println("------------------------------");
         System.out.println("Contenido de la playlist: ");
-        Cancion otroObjeto = objeto.getObjeto();
-         System.out.println(otroObjeto.getNombre() + " " + otroObjeto.getInterprete());
         lista.printList();
     }
 }

@@ -27,6 +27,19 @@ public class Cancion {
         this.year=y;
     }
 
+    @Override
+    public String toString() {
+        return "Nombre: " + getNombre() 
+                + "\n Interprete: " + getInterprete() 
+                + "\n Album: " + getAlbum() 
+                + "\n Duracion: " + getDuracion() 
+                + "\n Genero: " + getGenero() 
+                + "\n Favoritos: " + isFavoritos() 
+                + "\n Year: " + getYear();
+    }
+
+    
+    
     public String getNombre() {
         return nombre;
     }
