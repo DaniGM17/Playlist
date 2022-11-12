@@ -79,10 +79,6 @@ public class Lista<T> {
     public void delete(int posicion){
         actual = head;
         Nodo aux = null;
-        /*if(actual != null && numero != posicion){
-            head = actual.siguiente;
-            return;
-        }*/
         int numero = 1;
         while(actual != null && numero != posicion){
             aux = actual;
@@ -93,6 +89,20 @@ public class Lista<T> {
             return;
         }
         aux.siguiente = actual.siguiente;
+    }
+    
+    public void deleteI(){
+        if(head == null){
+            System.out.println("La lista está vacía");
+            return;
+        }else{
+            if(head != tail){
+                head = head.siguiente;
+            }
+            else{
+                head = tail = null;
+            }
+        }
     }
     
     public void printList() {

@@ -119,7 +119,11 @@ public class TestingPlaylist {
                     System.out.println("¿Qué posición quieres eliminar?");
                     entrada = bufer.readLine();
                     posicion = Integer.parseInt(entrada);
+                    if(posicion == 1){
+                        lista.deleteI();
+                    }else{
                     lista.delete(posicion);
+                    }
                 break;
                 case 7:
                     System.out.println("------------------------------");
