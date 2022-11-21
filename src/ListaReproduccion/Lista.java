@@ -105,8 +105,22 @@ public class Lista<T> {
                 System.out.println(actual.getObjeto().toString());
                 break;
             }
-            actual=actual.getSiguiente();
+            actual = actual.getSiguiente();
         }
+    }
+
+    public boolean checar(int posicion) {
+        boolean checar = false;
+        int size= 0;
+        actual = head;
+        while(actual != null){
+            size++;
+            actual = actual.siguiente;
+        }
+        if(size >= posicion){
+            checar = true;
+        }
+        return checar;
     }
 
     public void printList() {
@@ -121,9 +135,9 @@ public class Lista<T> {
     }
 
     public boolean vacia() {
-        if(head == null){
+        if (head == null) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }

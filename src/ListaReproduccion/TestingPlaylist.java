@@ -37,6 +37,7 @@ public class TestingPlaylist {
             System.out.println("4.-Borrar una canción de una posición");
             System.out.println("5.-Buscar canción por posición");
             System.out.println("6.-Mostrar mi lista de reproducción");
+            System.out.println("7.- Checar si existe una posición");
             entrada = bufer.readLine();
             opcion = Integer.parseInt(entrada);
 
@@ -76,8 +77,8 @@ public class TestingPlaylist {
                     }
                     break;
                 case 2:
-                    boolean vacia=lista.vacia();
-                    if(vacia){
+                    boolean vacia = lista.vacia();
+                    if (vacia) {
                         System.out.println("La lista por el momento está vacía, debes inicializarla para poder hacer la siguiente acción");
                         break;
                     }
@@ -116,31 +117,31 @@ public class TestingPlaylist {
                     break;
 
                 case 3:
-                    vacia=lista.vacia();
-                    if(vacia){
+                    vacia = lista.vacia();
+                    if (vacia) {
                         System.out.println("La lista por el momento está vacía, debes inicializarla para poder hacer la siguiente acción");
                         break;
                     }
                     lista.delete();
-                break;
+                    break;
                 case 4:
-                    vacia=lista.vacia();
-                    if(vacia){
+                    vacia = lista.vacia();
+                    if (vacia) {
                         System.out.println("La lista por el momento está vacía, debes inicializarla para poder hacer la siguiente acción");
                         break;
                     }
                     System.out.println("¿Qué posición quieres eliminar?");
                     entrada = bufer.readLine();
                     posicion = Integer.parseInt(entrada);
-                    if(posicion == 1){
+                    if (posicion == 1) {
                         lista.deleteI();
-                    }else{
-                    lista.delete(posicion);
+                    } else {
+                        lista.delete(posicion);
                     }
-                break;
+                    break;
                 case 5:
-                    vacia=lista.vacia();
-                    if(vacia){
+                    vacia = lista.vacia();
+                    if (vacia) {
                         System.out.println("La lista por el momento está vacía, debes inicializarla para poder hacer la siguiente acción");
                         break;
                     }
@@ -148,16 +149,27 @@ public class TestingPlaylist {
                     entrada = bufer.readLine();
                     posicion = Integer.parseInt(entrada);
                     lista.buscar(posicion);
-                break;
+                    break;
                 case 6:
-                    vacia=lista.vacia();
-                    if(vacia){
+                    vacia = lista.vacia();
+                    if (vacia) {
                         System.out.println("La lista por el momento está vacía, debes inicializarla para poder hacer la siguiente acción");
                         break;
                     }
                     System.out.println("------------------------------");
                     System.out.println("Contenido de la playlist: ");
                     lista.printList();
+                    break;
+                case 7:
+                    System.out.println("¿Qué posición quieres buscar?");
+                    entrada = bufer.readLine();
+                    posicion = Integer.parseInt(entrada);
+                    boolean checar = lista.checar(posicion);
+                    if(checar){
+                        System.out.println("Esa posición existe");
+                    }else{
+                        System.out.println("No existe");
+                    }
                     break;
             }
             System.out.println("¿Quieres realizar otra acción?");
