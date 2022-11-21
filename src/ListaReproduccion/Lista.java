@@ -99,12 +99,13 @@ public class Lista<T> {
         actual = head;
         int contador = 0;
         while (contador != posicion && contador != posicion) {
-            actual = actual.getSiguiente();
             contador++;
             if (contador == posicion) {
                 System.out.println("Canción " + posicion);
                 System.out.println(actual.getObjeto().toString());
+                break;
             }
+            actual=actual.getSiguiente();
         }
     }
 
